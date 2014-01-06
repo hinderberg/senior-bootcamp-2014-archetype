@@ -18,6 +18,11 @@ exports.single = function(id, callback) {
       return;
     }
 
+    if(body.statuscode === 500) {
+      callback(undefined);
+      return;
+    }
+
     var message = {
       message_id: body.id
     };
