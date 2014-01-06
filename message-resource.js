@@ -6,6 +6,11 @@ var get = function(req, res) {
 	var id = parseInt(req.params.id) || -1;
 
   messageRepository.single(id, function(message) {
+
+    if (!message) {
+      res.send(404);
+    }
+
     res.json(message);
   });
 
