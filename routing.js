@@ -1,4 +1,4 @@
-var messageResource = require('./message-resource');
+var messageResource = require('./lib/message/message-resource');
 
 exports.setup = function(server) {
 
