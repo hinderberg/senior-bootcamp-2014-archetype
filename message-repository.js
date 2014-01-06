@@ -1,11 +1,8 @@
-var request = require('request');
+var socialcast = require('./lib/socialcast');
 
 var list = function(callback) {
 
-	request.get({
-		uri : 'http://socialcast.apiary.io/api/messages',
-		json : true
-	}, 
+  socialcast.get('messages',
 
 	function (error, response, body) {
 	    if (error || response.statusCode != 200) {
@@ -14,6 +11,6 @@ var list = function(callback) {
 	    }
 	    callback(body);
 	});
-}
+};
 
 exports.list = list;
