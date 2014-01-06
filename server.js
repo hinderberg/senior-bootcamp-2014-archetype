@@ -13,7 +13,6 @@ var mockServer = 'http://sbc2014.apiary.io';
 
 
 
-
 // if on heroku use heroku port.
 var port = process.env.PORT || 1339;
 app.listen(port);

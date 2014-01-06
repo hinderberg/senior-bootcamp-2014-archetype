@@ -1,26 +1,5 @@
 
-
-
-
-
-/* var temp = function('/', function(req, res) {
-  request.get({
-    url: demo_url,
-    json: true,
-    headers: {
-            'User-Agent': 'request'
-                }
-    }, function(error, response, body) {
-      if(error) {
-          console.log("an error has occured. keep calm and carry on.");
-      }
-      res.json(body);
-    });
-
-
-}); */
-
-var repository = require('./repository');
+var messageRepository = require('./message-repository');
 
 
 var get = function(req, res) {
@@ -31,14 +10,17 @@ var get = function(req, res) {
 		message_id : id
 	};
 
-
 	res.json(message);
 
+}
 
-	// 
+var list = function(req, res) {
 
-
+	messageRepository.list(function(messages) {
+		res.json(messages);
+	});
 
 }
 
 exports.get = get;
+exports.list = list;
