@@ -1,18 +1,15 @@
 
 var messageRepository = require('./message-repository');
 
-
 var get = function(req, res) {
 
 	var id = parseInt(req.params.id) || -1;
 
-	var message = {
-		message_id : id
-	};
+  messageRepository.single(id, function(message) {
+    res.json(message);
+  });
 
-	res.json(message);
-
-}
+};
 
 var list = function(req, res) {
 
@@ -20,7 +17,7 @@ var list = function(req, res) {
 		res.json(messages);
 	});
 
-}
+};
 
 exports.get = get;
 exports.list = list;
