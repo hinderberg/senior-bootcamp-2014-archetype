@@ -1,11 +1,9 @@
 var messageResource = require('./lib/message/message-resource');
+var messageView = require('./lib/message/message-view');
 
 exports.setup = function(server) {
 
-	server.get('/', function(req, res) {
-		res.send("Hello world. JA!");
-	});
-
+	server.get('/', messageView.messages);
 	server.get('/message/:id', messageResource.get);
 	server.get('/messages', messageResource.list);
 	
