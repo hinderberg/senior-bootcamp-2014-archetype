@@ -10,6 +10,7 @@ var app = express();
 var routing = require('./routing');
 var appConfig = require('./lib/app-config')();
 
+
 routing.setup(app);
 
 app.set('views', path.join(__dirname, 'views'));
