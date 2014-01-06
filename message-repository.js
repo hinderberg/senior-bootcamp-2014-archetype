@@ -23,10 +23,6 @@ exports.single = function(id, callback) {
       return;
     }
 
-    var message = {
-      message_id: body.id
-    };
-
-    callback(message);
+    callback(body);
   });
 };
