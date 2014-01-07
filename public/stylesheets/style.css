@@ -25,3 +25,50 @@ h2 {
 .light-dark {
   background-color: #262626;
 }
+header {
+  background-color: #1B1B1B;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  text-transform: uppercase;
+  min-height: 60px;
+  padding: 0px 10px 0px 10px;
+}
+header .menu {
+  float: left;
+  margin-top: 21px;
+}
+header .logo {
+  margin-top: 16px;
+  float: left;
+  color: #FD5158;
+  font-size: 24px;
+  margin-left: 8px;
+  text-decoration: none;
+}
+.content {
+  margin: 68px 0 30px 0;
+}
+.menu {
+  list-style: none;
+}
+.menu-item {
+  float: left;
+  margin-right: 0.5em;
+  font-weight: 100;
+  font-size: 17px;
+}
+.menu-item a {
+  color: #B9B9B9;
+  text-decoration: none;
+}
+.menu-item a:hover {
+  color: #FFFFFF;
+}
+.messages {
+  padding: 20px;
+}
+.graphs {
+  padding: 20px;
+}
