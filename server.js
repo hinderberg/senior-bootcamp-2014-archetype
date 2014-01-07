@@ -10,13 +10,12 @@ var app = express();
 var routing = require('./routing');
 var appConfig = require('./lib/app-config')();
 
-
-routing.setup(app);
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 app.engine('html', consolidate.handlebars);
 app.use(express.bodyParser());
+
+routing.setup(app);
 
 app.use(less({
   src: path.join(__dirname, 'public')
