@@ -10,7 +10,8 @@ exports.setup = function(server) {
 	server.get('/message/:id', messageResource.get);
 	server.get('/messages', messageResource.list);
     server.post('/push', messageResource.insert);
-    server.get('/employee/:id', userResource.get);
+    server.get('/employees', userResource.list);
+    server.get('/employees/:id', userResource.get);
     server.get('/syncAllEmployees', userResource.syncAll);
 
 };
