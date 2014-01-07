@@ -10,6 +10,8 @@ var app = express();
 var routing = require('./routing');
 var appConfig = require('./lib/app-config')();
 
+var db = require('./lib/db');
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 app.engine('html', consolidate.handlebars);
@@ -23,5 +25,19 @@ app.use(less({
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(appConfig.port);
-console.log('Listening on port: ' + appConfig.port);
+
+db.connect(appConfig.db, function(err) {
+
+  if (err) {
+    console.log(err);
+  }
+
+  console.log('Connected to ' + appConfig.db.url);
+
+  app.listen(appConfig.port);
+  console.log('Listening on port: ' + appConfig.port);
+
+});
+
+
+
