@@ -23,6 +23,7 @@
     "consolidate": "0.10.0",
     "handlebars": "1.0.12",
     "underscore": "1.5.2",
-    "less-middleware": "0.1.14"
+    "less-middleware": "0.1.14",
+    "mongodb": "*"
   }
 }
