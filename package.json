@@ -25,5 +25,10 @@
     "underscore": "1.5.2",
     "less-middleware": "0.1.14",
     "mongodb": "*"
+  },
+  "devDependencies" : {
+    "jshint": "*",
+    "mocha": "*",
+    "chai": "*"
   }
 }
