@@ -3,9 +3,12 @@ var expect = chai.expect;
 
 var carRepository = require('./../lib/car/car-repository');
 
-describe('something', function(){
+describe('car repo tests', function() {
     
-    
-    expect(1).to.equal(2);
-
+    it('should get car info', function(done) {
+        
+        carRepository.get('dp28732', function(err, result)  {
+            done();
+        });
+    });
 });
