@@ -5,7 +5,24 @@
         {{#each messages}}
 
         <li class="message">
-            {{body}}
+            <div class="user">
+                {{user.name}} <span class="username">@{{user.username}}</span>
+            </div>
+            <div class="body">{{body}}</div>
+            <div class="likes">
+
+                {{#if likes}}
+                Likes:
+                {{#each likes}}
+                    {{user.name}} -
+                {{/each}}
+                {{/if}}
+
+            </div>
+
+
+
+
         </li>
 
         {{/each}}
