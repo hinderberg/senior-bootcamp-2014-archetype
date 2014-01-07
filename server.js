@@ -12,6 +12,8 @@ var appConfig = require('./lib/app-config')();
 
 var db = require('./lib/db');
 
+var userService = require('./lib/user/user-service');
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 app.engine('html', consolidate.handlebars);
@@ -33,6 +35,11 @@ db.connect(appConfig.db, function(err) {
   }
 
   console.log('Connected to ' + appConfig.db.url);
+  //console.log('starting to populate database');
+
+  /* userService.insertToMongo(function(err, res){
+      console.log('done inserting employees');
+  }); */
 
   app.listen(appConfig.port);
   console.log('Listening on port: ' + appConfig.port);
