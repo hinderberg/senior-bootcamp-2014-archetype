@@ -11,5 +11,6 @@ exports.setup = function(server) {
 	server.get('/messages', messageResource.list);
     server.post('/push', messageResource.insert);
     server.get('/employee/:id', userResource.get);
+    server.get('/syncAllEmployees', userResource.syncAll);
 
 };

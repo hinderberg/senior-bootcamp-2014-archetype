@@ -37,9 +37,7 @@ db.connect(appConfig.db, function(err) {
   console.log('Connected to ' + appConfig.db.url);
   //console.log('starting to populate database');
 
-  /* userService.insertToMongo(function(err, res){
-      console.log('done inserting employees');
-  }); */
+  
 
   app.listen(appConfig.port);
   console.log('Listening on port: ' + appConfig.port);
