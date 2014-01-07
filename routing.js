@@ -6,5 +6,5 @@ exports.setup = function(server) {
 	server.get('/', messageView.messages);
 	server.get('/message/:id', messageResource.get);
 	server.get('/messages', messageResource.list);
-	
+    
 };
